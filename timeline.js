@@ -33,10 +33,10 @@ function timeline(domElement) {
       dateArray[d.id] = date;
     });
 
-   var line = svg.attr("class", "line")
-                 .selectAll("line").data(data.links)
-                 .enter().append("line")
-                 .style("stroke", "black");
+    var line = svg.attr("class", "line")
+                  .selectAll("line").data(data.links)
+                  .enter().append("line")
+                  .style("stroke", "black");
 
     var node = svg.selectAll(".node")
                   .data(data.nodes)
