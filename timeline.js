@@ -3,6 +3,9 @@ function timeline(domElement) {
       height = 10000,
       padding = 100;
 
+  var ref = firebase.database().ref();
+  console.log(ref);
+
   var svg = d3.select("body")
               .append("svg")
               .attr("width", width)
@@ -20,7 +23,7 @@ function timeline(domElement) {
                     .orient("left")
                     .scale(yScale);
 
-  d3.json("art.json", function(data) {
+  d3.json("art-connexions-export.json", function(data) {
     var date;
     var dateArray = [];
 
@@ -59,8 +62,6 @@ function timeline(domElement) {
         .attr("y2", function(element) { return findDate(element.target); });
 
     function findDate(name) {
-      console.log(name);
-      console.log(dateArray[name]);
       return yScale(dateArray[name]);
     }
 
