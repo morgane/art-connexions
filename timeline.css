@@ -1,0 +1,32 @@
+html {
+  background: #F5C8CD; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#F5C8CD, #D8F6FD); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#F5C8CD, #D8F6FD); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#F5C8CD, #D8F6FD); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#F5C8CD, #D8F6FD); /* Standard syntax (must be last) */
+}
+
+h1 {
+  color: black;
+  fill: none;
+  font-size: 48px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-text-fill-color: #F5C8CD; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+svg {
+  padding-left: 20px;
+}
+
+.yaxis {
+  fill: none;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.yaxis text {
+  font-size: 48px;
+}
