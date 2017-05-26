@@ -3,9 +3,6 @@ function timeline(domElement) {
       height = 10000,
       padding = 100;
 
-  var ref = firebase.database().ref();
-  console.log(ref);
-
   var svg = d3.select("body")
               .append("svg")
               .attr("width", width)
