@@ -1,9 +1,7 @@
 <html>
   <head>
     <title>Art Connexions</title>
-    <script src="http://d3js.org/d3.v2.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
-    <script src="timeline.js"></script>
 
     <link href="timeline.css" rel="stylesheet" type="text/css" />
   </head>
@@ -11,8 +9,10 @@
   <body>
     <h1>Art Connexions</h1>
     <div id="timeline"></div>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="timeline.js"></script>
 
-    <script>
+<!--     <script>
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyCi8Ie3KJcrquJkySAmUl2xCEax0r80ccQ",
@@ -23,10 +23,7 @@
         messagingSenderId: "187223852537"
       };
       firebase.initializeApp(config);
-    </script>
-    <script>
-      timeline("#timeline");
-    </script>
+    </script> -->
 
   </body>
 </html>
