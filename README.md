@@ -1,6 +1,6 @@
 # ART CONNEXIONS
 
-A D3 timeline showing which artists influenced who (Velázquez -> Manet). 
+A D3 timeline showing which artists influenced who (e.g. Velázquez -> Manet). 
 
 ## How to get started
 
