@@ -1,3 +1,4 @@
+
 html {
   background: #F5C8CD; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(#F5C8CD, #D8F6FD); /* For Safari 5.1 to 6.0 */
@@ -12,7 +13,7 @@ h1 {
   font-size: 48px;
   text-align: center;
   text-transform: uppercase;
-  -webkit-text-fill-color: #F5C8CD; /* Will override color (regardless of order) */
+  -webkit-text-fill-color: #F5C8CD;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
