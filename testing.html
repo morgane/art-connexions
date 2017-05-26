@@ -4,7 +4,6 @@
 <body>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
-
   var width = 1000,
       height = 10000,
       padding = 100;
@@ -28,26 +27,39 @@
                     .orient("left")
                     .scale(yScale);
 
-  var force = d3.layout.force()
-      .size([width, height])
-      .charge(-300)
-      .linkDistance(40)
-      .on("tick", tick);
+  // var force = d3.layout.force()
+  //                      .size([width, height])
+  //                      .charge(-300)
+  //                      .linkDistance(100)
+  //                      .on("tick", tick);
 
-  var drag = force.drag()
-      .on("dragstart", dragstart);
+  // var drag = force.drag()
+  //                 .on("dragstart", dragstart);
 
-  var link = svg.selectAll(".link"),
-      node = svg.selectAll(".node");
+  // var link = svg.selectAll(".link"),
+  //     node = svg.selectAll(".node");
 
   d3.json("connexions.json", function(error, graph) {
     if (error) throw error;
+
+    var dateArray = [];
+
+    var force = d3.layout.force()
+                       .size([width, height])
+                       .charge(-300)
+                       .linkDistance(100)
+                       .on("tick", tick);
+
+    var drag = force.drag()
+                    .on("dragstart", dragstart);
+
+    var link = svg.selectAll(".link"),
+        node = svg.selectAll(".node");
 
     graph.nodes.forEach(function(d) {
       date = new Date(d.date, 0);
       d.date = date;
       dateArray[d.name] = date;
-      console.log(dateArray);
     });
 
     force
@@ -66,44 +78,49 @@
                .attr("r", 12)
                .on("dblclick", dblclick)
                .call(drag);
+
     node
       .attr("r", 40)
       .attr("stroke", "black")
       .attr("fill", "white");
+
+    function findDate(id) {
+      return yScale(id.date);
+    }
+
+    function tick() {
+      // link.attr("x1", function(d) { return d.source.x; })
+      //     .attr("y1", function(d) { return d.source.y; })
+      //     .attr("x2", function(d) { return d.target.x; })
+      //     .attr("y2", function(d) { return d.target.y; });
+
+      link.attr("x1", function(d) { return d.source.x; })
+          .attr("y1", function(element) { return findDate(element.source); })
+          .attr("x2", function(d) { return d.target.x; })
+          .attr("y2", function(element) { return findDate(element.target); });
+
+      node.attr("cx", function(d) { return d.x; })
+          .attr("cy", function(element) { return yScale(element.date); });
+
+      // node.append("text")
+      //     .attr("dx", function(d) { return d.x; })
+      //     .attr("dy", function(element) { return yScale(element.date); })
+      //     .attr("text-anchor", "middle")
+      //     .text(function(element) {return element.name});
+    }
+
+    function dblclick(d) {
+      d3.select(this).classed("fixed", d.fixed = false);
+    }
+
+    function dragstart(d) {
+      d3.select(this).classed("fixed", d.fixed = true);
+    }
+
+    svg.append("g")
+     .attr("class", "yaxis")
+     .attr("transform", "translate("+padding+", 0)")
+     .call(yAxis);
   });
-
-  function findDate(name) {
-    // console.log(name);
-    // console.log(dateArray[name]);
-    return yScale(dateArray[name]);
-  }
-
-  function tick() {
-    // link.attr("x1", function(d) { return d.source.x; })
-    //     .attr("y1", function(d) { return d.source.y; })
-    //     .attr("x2", function(d) { return d.target.x; })
-    //     .attr("y2", function(d) { return d.target.y; });
-
-    link.attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(element) { return findDate(element.source); })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(element) { return findDate(element.target); });
-
-    node.attr("cx", function(d) { return d.x; })
-        .attr("cy", function(element) { return yScale(element.date); });
-  }
-
-  function dblclick(d) {
-    d3.select(this).classed("fixed", d.fixed = false);
-  }
-
-  function dragstart(d) {
-    d3.select(this).classed("fixed", d.fixed = true);
-  }
-
-  svg.append("g")
-   .attr("class", "yaxis")
-   .attr("transform", "translate("+padding+", 0)")
-   .call(yAxis);
 
 </script>
