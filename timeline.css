@@ -41,3 +41,7 @@ svg {
 .node text {
   font-weight: bold;
 }
+
+g.node:active {
+  fill: white;
+}

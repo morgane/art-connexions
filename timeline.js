@@ -84,27 +84,31 @@ d3.json("connexions.json", function(error, graph) {
              .on("dblclick", dblclick)
              .call(drag);
 
-  /* Style the nodes as simple squares for now */
-  /* Probably won't keep this? */
-  node.append("rect")
-      .attr("width", 100)
-      .attr("height", 100)
-      .attr("x", function(d) { return -50;})
-      .attr("y", function(d) { return -40;})
-      .attr("stroke", "black")
-      .attr("fill", "transparent");
-
   /* Use key images for nodes */
   node.append("svg:image")
-      .attr("xlink:href",  function(d) { return d.image;})
-      .attr("x", function(d) { return -50;})
-      .attr("y", function(d) { return -40;});
+      .attr("xlink:href",  function(d) { return d.image; })
+      .attr("x", -50)
+      .attr("y", -40);
 
   /* Add names to the nodes */
   node.append("text")
       .attr("text-anchor", "middle")
       .attr("dy", -50)
-      .text(function(e) { return e.name });
+      .text(function(e) { return e.name })
+      .call(getBB);
+
+  /* Highlight labels */
+  node.insert("rect", "text")
+      .attr("width", function(d) { return d.bbox.width; })
+      .attr("height", function(d) { return d.bbox.height; })
+      .attr("x", function(d) { return -d.bbox.width/2; })
+      .attr("y", -65)
+      .attr("fill", "white");
+
+  /* Get bounding box (bbox) of text, to figure out highlight size */
+  function getBB(selection) {
+    selection.each(function(d) { d.bbox = this.getBBox(); })
+  }
 
   /* Place the nodes and their links */
   force.on("tick", function() {
