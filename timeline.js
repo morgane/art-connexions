@@ -24,25 +24,24 @@ var yAxis = d3.svg.axis()
                   .orient("left")
                   .scale(yScale);
 
+/* Set up force layout: this will place nodes and let us drag them around */
+var force = d3.layout.force()
+                     .size([width, height])
+                     .charge(-300)
+                     .linkDistance(100);
+
+/* A necessary and mysterious step */
+var drag = force.drag()
+                .on("dragstart", dragstart);
+
+/* Get/set these ahead of time */
+var link = svg.selectAll(".link"),
+    node = svg.selectAll(".node"),
+    edges = [];
+
 /* Read the JSON file! */
 d3.json("connexions.json", function(error, graph) {
   if (error) throw error;
-
-  /* Set up force layout: this will place nodes and let us drag them around */
-  var force = d3.layout.force()
-                       .size([width, height])
-                       .charge(-300)
-                       .linkDistance(100)
-                       .on("tick", tick);
-
-  /* A necessary and mysterious step */
-  var drag = force.drag()
-                  .on("dragstart", dragstart);
-
-  /* Get/set these ahead of time */
-  var link = svg.selectAll(".link"),
-      node = svg.selectAll(".node"),
-      edges = [];
 
   /* A necessary and mysterious step */
   graph.nodes.forEach(function(d) {
@@ -100,25 +99,25 @@ d3.json("connexions.json", function(error, graph) {
       .text(function(e) { return e.name });
 
   /* Place the nodes and their links */
-  function tick() {
+  force.on("tick", function() {
     link.attr("x1", function(e) { return e.source.x; })
         .attr("y1", function(e) { return yScale(e.source.date); })
         .attr("x2", function(e) { return e.target.x; })
         .attr("y2", function(e) { return yScale(e.target.date); });
 
     node.attr("transform", function(e) { return "translate(" + e.x + "," + yScale(e.date) + ")"; });
-  }
-
-  /* Function for dragging around nodes */
-  function dblclick(d) {
-    d3.select(this).classed("fixed", d.fixed = false);
-  }
-
-  /* Function for dragging around nodes */
-  function dragstart(d) {
-    d3.select(this).classed("fixed", d.fixed = true);
-  }
+  });
 });
+
+/* Function for dragging around nodes */
+function dblclick(d) {
+  d3.select(this).classed("fixed", d.fixed = false);
+}
+
+/* Function for dragging around nodes */
+function dragstart(d) {
+  d3.select(this).classed("fixed", d.fixed = true);
+}
 
 /* A mysterious and necessary step */
 svg.append("g")
