@@ -110,9 +110,21 @@
       "date": 1938,
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Tilted_Spheres.jpg/1920px-Tilted_Spheres.jpg"
     },
-    {"name": "James Turrell", "date": 1943, "image": ""},
-    {"name": "Barbara Kruger", "date": 1945, "image": ""},
-    {"name": "Jenny Holzer", "date": 1950, "image": ""}
+    {
+      "name": "James Turrell",
+      "date": 1943,
+      "image": "http://jamesturrell.com/wp-content/uploads/2015/11/Dhatu-2009-Florian-Holzherr-2S1-1440x951.jpg"
+    },
+    {
+      "name": "Barbara Kruger",
+      "date": 1945,
+      "image": "http://www.barbarakruger.com/art/yourbody.jpg"
+    },
+    {
+      "name": "Jenny Holzer",
+      "date": 1950,
+      "image": "http://projects.jennyholzer.com/uploads/project/image/attachment/246/T11_84_02.jpg"
+    }
   ],
   "links": [
     {"source":  "Barbara Kruger", "target":  "Jenny Holzer"},
