@@ -1,12 +1,13 @@
 {
   "nodes": [
-    {"name": "Velazquez", "date": 1400},
-    {"name": "Vermeer", "date": 1430},
-    {"name": "Titian", "date": 1450},
-    {"name": "Manet", "date": 1460}
+    {"name": "Hieronymus Bosch", "date": 1450},
+    {"name": "Michelangelo", "date": 1475},
+    {"name": "Titian", "date": 1490},
+    {"name": "Tintoretto", "date": 1518},
+    {"name": "Manet", "date": 1832}
   ],
   "links": [
-    {"source":  0, "target":  1},
-    {"source":  1, "target":  2}
+    {"source":  "Titian", "target":  "Manet"},
+    {"source":  "Titian", "target":  "Tintoretto"}
   ]
 }
