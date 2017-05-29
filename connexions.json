@@ -1,40 +1,133 @@
 {
   "nodes": [
-    {"name": "Hieronymus Bosch", "date": 1450},
-    {"name": "Michelangelo", "date": 1475},
-    {"name": "Titian", "date": 1490},
-    {"name": "Tintoretto", "date": 1518},
-    {"name": "Pieter Bruegel the Elder", "date": 1525},
-    {"name": "El Greco", "date": 1541},
-    {"name": "Caravaggio", "date": 1571},
-    {"name": "Gentileschi", "date": 1593},
-    {"name": "Bernini", "date": 1598},
-    {"name": "Velázquez", "date": 1599},
-    {"name": "Rembrandt", "date": 1606},
-    {"name": "Vermeer", "date": 1632},
-    {"name": "Goya", "date": 1746},
-    {"name": "Vigée Le Brun", "date": 1755},
-    {"name": "Hokusai", "date": 1760},
-    {"name": "Manet", "date": 1832},
-    {"name": "Whistler", "date": 1834},
-    {"name": "Monet", "date": 1840},
-    {"name": "John Singer Sargent", "date": 1856},
-    {"name": "Modigliani", "date": 1884},
-    {"name": "Eva Hesse", "date": 1936},
-    {"name": "Richard Serra", "date": 1938},
-    {"name": "James Turrell", "date": 1943},
-    {"name": "Barbara Kruger", "date": 1945},
-    {"name": "Jenny Holzer", "date": 1950}
+    {
+      "name": "Hieronymus Bosch",
+      "date": 1450,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/The_Garden_of_Earthly_Delights_by_Bosch_High_Resolution.jpg/2560px-The_Garden_of_Earthly_Delights_by_Bosch_High_Resolution.jpg"
+    },
+    {
+      "name": "Michelangelo",
+      "date": 1475,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/%27David%27_by_Michelangelo_Fir_JBU002.jpg/1024px-%27David%27_by_Michelangelo_Fir_JBU002.jpg"
+    },
+    {
+      "name": "Titian",
+      "date": 1490,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg/1920px-Tiziano_-_Venere_di_Urbino_-_Google_Art_Project.jpg"
+    },
+    {
+      "name": "Tintoretto",
+      "date": 1518,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Accademia_-_St_Mark%27s_Body_Brought_to_Venice_by_Jacopo_Tintoretto.jpg/1024px-Accademia_-_St_Mark%27s_Body_Brought_to_Venice_by_Jacopo_Tintoretto.jpg"
+    },
+    {
+      "name": "Pieter Bruegel the Elder",
+      "date": 1525,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.jpg/1920px-Pieter_Bruegel_the_Elder_-_Peasant_Wedding_-_Google_Art_Project_2.jpg"
+    },
+    {
+      "name": "El Greco",
+      "date": 1541,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/El_Greco%2C_The_Vision_of_Saint_John_%281608-1614%29.jpg/1280px-El_Greco%2C_The_Vision_of_Saint_John_%281608-1614%29.jpg"
+    },
+    {
+      "name": "Caravaggio",
+      "date": 1571,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Caravaggio_Judith_Beheading_Holofernes.jpg"
+    },
+    {
+      "name": "Gentileschi",
+      "date": 1593,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Artemisia_Gentileschi_-_Giuditta_decapita_Oloferne_-_Google_Art_Project.jpg/1024px-Artemisia_Gentileschi_-_Giuditta_decapita_Oloferne_-_Google_Art_Project.jpg"
+    },
+    {
+      "name": "Bernini",
+      "date": 1598,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Bernini%27s_David.jpg"
+    },
+    {
+      "name": "Velázquez",
+      "date": 1599,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg/1280px-Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg"
+    },
+    {
+      "name": "Rembrandt",
+      "date": 1606,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/The_Nightwatch_by_Rembrandt.jpg/1920px-The_Nightwatch_by_Rembrandt.jpg"
+    },
+    {
+      "name": "Vermeer",
+      "date": 1632,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg/1280px-Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.jpg"
+    },
+    {
+      "name": "Goya",
+      "date": 1746,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_thin_black_margin.jpg/1920px-El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_thin_black_margin.jpg"
+    },
+    {
+      "name": "Vigée Le Brun",
+      "date": 1755,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Self-portrait_with_Her_Daughter_by_Elisabeth-Louise_Vig%C3%A9e_Le_Brun.jpg/1024px-Self-portrait_with_Her_Daughter_by_Elisabeth-Louise_Vig%C3%A9e_Le_Brun.jpg"
+    },
+    {
+      "name": "Hokusai",
+      "date": 1760,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Great_Wave_off_Kanagawa2.jpg/1920px-Great_Wave_off_Kanagawa2.jpg"
+    },
+    {
+      "name": "Manet",
+      "date": 1832,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Edouard_Manet_-_Olympia_-_Google_Art_Project_3.jpg/1920px-Edouard_Manet_-_Olympia_-_Google_Art_Project_3.jpg"
+    },
+    {
+      "name": "Whistler",
+      "date": 1834,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Whistler_James_Symphony_in_White_no_1_%28The_White_Girl%29_1862.jpg/800px-Whistler_James_Symphony_in_White_no_1_%28The_White_Girl%29_1862.jpg"
+    },
+    {
+      "name": "Monet",
+      "date": 1840,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/Monet_dejeunersurlherbe.jpg"
+    },
+    {
+      "name": "John Singer Sargent",
+      "date": 1856,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/The_Daughters_of_Edward_Darley_Boit%2C_John_Singer_Sargent%2C_1882_%28unfree_frame_crop%29.jpg/1280px-The_Daughters_of_Edward_Darley_Boit%2C_John_Singer_Sargent%2C_1882_%28unfree_frame_crop%29.jpg"
+    },
+    {
+      "name": "Modigliani",
+      "date": 1884,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Amedeo_Modigliani_063.jpg/800px-Amedeo_Modigliani_063.jpg"
+    },
+    {
+      "name": "Eva Hesse",
+      "date": 1936,
+      "image": "https://upload.wikimedia.org/wikipedia/en/3/3c/Eva_Hesse_-_Repetition_Nineteen_III.jpg"
+    },
+    {
+      "name": "Richard Serra",
+      "date": 1938,
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Tilted_Spheres.jpg/1920px-Tilted_Spheres.jpg"
+    },
+    {"name": "James Turrell", "date": 1943, "image": ""},
+    {"name": "Barbara Kruger", "date": 1945, "image": ""},
+    {"name": "Jenny Holzer", "date": 1950, "image": ""}
   ],
   "links": [
+    {"source":  "Barbara Kruger", "target":  "Jenny Holzer"},
     {"source":  "Caravaggio", "target":  "Gentileschi"},
+    {"source":  "Eva Hesse", "target":  "Richard Serra"},
     {"source":  "El Greco", "target":  "Manet"},
     {"source":  "Goya", "target":  "Manet"},
     {"source":  "Hokusai", "target":  "Manet"},
+    {"source":  "Manet", "target":  "Monet"},
+    {"source":  "Manet", "target":  "Whistler"},
     {"source":  "Michelangelo", "target":  "Bernini"},
     {"source":  "Rembrandt", "target":  "Vermeer"},
     {"source":  "Titian", "target":  "Manet"},
     {"source":  "Titian", "target":  "Tintoretto"},
-    {"source":  "Velázquez", "target":  "Manet"}
+    {"source":  "Velázquez", "target":  "Manet"},
+    {"source":  "Whistler", "target":  "John Singer Sargent"}
   ]
 }

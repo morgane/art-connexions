@@ -84,18 +84,26 @@ d3.json("connexions.json", function(error, graph) {
              .on("dblclick", dblclick)
              .call(drag);
 
-  /* Style the nodes as simple circles for now */
-  node.append("circle")
-    .attr("r", 40)
-    .attr("x", 0)
-    .attr("y", 0)
-    .attr("stroke", "black")
-    .attr("fill", "white");
+  /* Style the nodes as simple squares for now */
+  /* Probably won't keep this? */
+  node.append("rect")
+      .attr("width", 100)
+      .attr("height", 100)
+      .attr("x", function(d) { return -50;})
+      .attr("y", function(d) { return -40;})
+      .attr("stroke", "black")
+      .attr("fill", "transparent");
+
+  /* Use key images for nodes */
+  node.append("svg:image")
+      .attr("xlink:href",  function(d) { return d.image;})
+      .attr("x", function(d) { return -50;})
+      .attr("y", function(d) { return -40;});
 
   /* Add names to the nodes */
   node.append("text")
-      .attr("dx", 0)
-      .attr("dy", 0)
+      .attr("text-anchor", "middle")
+      .attr("dy", -50)
       .text(function(e) { return e.name });
 
   /* Place the nodes and their links */

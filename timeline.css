@@ -30,3 +30,14 @@ svg {
 .yaxis text {
   font-size: 48px;
 }
+
+.node image {
+  display: block;
+  height: 100px;
+  vertical-align: top;
+  width: 100px;
+}
+
+.node text {
+  font-weight: bold;
+}
