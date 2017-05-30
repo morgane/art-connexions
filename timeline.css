@@ -34,3 +34,7 @@ svg {
 .node text {
   font-weight: bold;
 }
+
+.node image {
+  width: 100px;
+}

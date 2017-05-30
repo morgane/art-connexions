@@ -85,25 +85,11 @@ d3.json("connexions.json", function(error, graph) {
              .call(drag);
 
   /* Use key images for nodes */
-  node.append("svg:image")
-      .attr("xlink:href",  function(d) { return d.image; })
+  node.append("image")
+      .attr("xlink:href", function(d) { return d.image; })
+      .call(getBB)
       .attr("x", -50)
       .attr("y", -40);
-
-  $(".node image").each(function() {
-    // Calculate aspect ratio of SVG images
-    var svgHeight = $(this)[0].getBoundingClientRect().height;
-    var svgWidth = $(this)[0].getBoundingClientRect().width;
-    var aspectRatio = svgWidth/svgHeight;
-
-    if (aspectRatio > 1) { // Image is landscape
-      $(this).css({height: "100px"});
-      svgWidth = $(this)[0].getBoundingClientRect().width; // get new width
-      $(this).css({x: -svgWidth/2}); // center image
-    } else { // Image is portrait or square
-      $(this).css({width: "100px"});
-    }
-  });
 
   /* Add names to the nodes */
   node.append("text")
@@ -120,11 +106,6 @@ d3.json("connexions.json", function(error, graph) {
       .attr("y", -65)
       .attr("fill", "white");
 
-  /* Get bounding box (bbox) of text, to figure out highlight size */
-  function getBB(selection) {
-    selection.each(function(d) { d.bbox = this.getBBox(); })
-  }
-
   /* Place the nodes and their links */
   force.on("tick", function() {
     link.attr("x1", function(e) { return e.source.x; })
@@ -134,7 +115,32 @@ d3.json("connexions.json", function(error, graph) {
 
     node.attr("transform", function(e) { return "translate(" + e.x + "," + yScale(e.date) + ")"; });
   });
+
+  // Scale images properly after the graph has rendered
+  force.on("end", function() {
+    console.log("Done rendering");
+
+    $(".node image").each(function() {
+      console.log("Scale");
+      // Calculate aspect ratio of SVG images
+      var svgHeight = this.getBoundingClientRect().height;
+      var svgWidth = this.getBoundingClientRect().width;
+      var aspectRatio = svgWidth/svgHeight;
+
+      if (aspectRatio > 1) { // Image is landscape
+        $(this).css({height: "100px"});
+        svgWidth = 100 * aspectRatio; // get new width
+        $(this).css({width: svgWidth});
+         $(this).css({x: -svgWidth/2}); // center image
+      }
+    });
+  });
 });
+
+/* Get bounding box */
+function getBB(selection) {
+  selection.each(function(d) { d.bbox = this.getBoundingClientRect(); })
+}
 
 /* Function for dragging around nodes */
 function dblclick(d) {

@@ -1,8 +1,8 @@
 // $(document).ready(function() {
 //   $(".node image").each(function() {
 //     // Calculate aspect ratio of SVG images
-//     var svgHeight = $(this)[0].getBoundingClientRect().height;
-//     var svgWidth = $(this)[0].getBoundingClientRect().width;
+//     var svgHeight = this.getBoundingClientRect().height;
+//     var svgWidth = this.getBoundingClientRect().width;
 //     var aspectRatio = svgWidth/svgHeight;
 
 //     if (aspectRatio > 1) { // Image is landscape
